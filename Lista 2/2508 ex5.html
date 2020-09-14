@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 5</title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+        <script>
+            function calcular() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var num1 = Number(document.getElementById("num1").value)
+                var num2 = Number(document.getElementById("num2").value)
+                var escolha = Number(document.getElementById("escolha").value)
+                var res
+
+                //função de escolha
+                switch (escolha) {
+                    case 1: res = (num1 + num2) / 2
+                        break;
+                    case 2: if (num1 > num2) {
+                            res = num1 - num2
+                        }
+                            else {
+                            res = num2 - num1
+                            }                      
+                        break;
+                    case 3: res = (num1 * num2)
+                        break;
+                    case 4: if (num2 != 0) {
+                        res = num1 / num2
+                    }
+                            else {
+                            res = "Não é possível dividir por zero!"
+                            }
+                        break;
+                    default: res = "Opção Inválida"
+                        break;
+                    }
+                    document.getElementById("res").innerHTML = `${res}`
+                }
+        </script>
+    </head>
+    <body>
+         <h1>Operações </h1>
+         <h3>Favor usar |.| ao invés de |,| </h3>
+         <h3><input type="number" placeholder="Digite um Número" id="num1"></h3><!--Entrada de dados-->
+         <h3><input type="number" placeholder="Digite um Número" id="num2"></h3>
+         <h3>Digite o número da Operação</h3>
+         <h3>
+            |1| Média <br>
+            |2| Diferença do maior pelo menor<br>
+            |3| Multiplicação<br>
+            |4| Divisão do primeiro pelo segundo
+        </h3>
+        <h3><input type="number" placeholder="Número da Operação" id="escolha"></h3>
+        <h3><button type="button" onclick="calcular()">Calcular</button></h3>
+        <h3 id="res"></h3><!--Mensagem de saida-->
+    </body>
+</html>

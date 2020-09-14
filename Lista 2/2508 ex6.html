@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 6</title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+        <script>
+            function calcular() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var num1 = Number(document.getElementById("num1").value)
+                var num2 = Number(document.getElementById("num2").value)
+                var escolha = Number(document.getElementById("escolha").value)
+                var vazio
+                var vazio1
+                var vazio2
+
+                //função de escolha    
+                switch (escolha) {
+                    case 1:
+                        vazio = Math.pow(num1,num2)
+                        document.getElementById("vazio").innerHTML = `${num1}^${num2}=${vazio}`
+                        break;
+                    case 2:
+                        vazio1 = Math.sqrt(num1)
+                        vazio2 = Math.sqrt(num2)
+                        document.getElementById("vazio1").innerHTML = `Raiz quadrada do 1º numero: ${vazio1}`
+                        document.getElementById("vazio2").innerHTML = `Raiz quadrada do 2º numero: ${vazio2}`
+                        break;
+                    case 3:
+                        vazio1 = Math.cbrt(num1)
+                        vazio2 = Math.cbrt(num2)
+                        document.getElementById("vazio1").innerHTML = `Raiz cúbica do 1º numero: ${vazio1}`
+                        document.getElementById("vazio2").innerHTML = `Raiz cúbica do 2º numero: ${vazio2}`
+                        break;
+                    default: document.getElementById("vazio").innerHTML = `Opção Inválida`
+                        break;
+                }
+            }
+        </script>
+    </head>
+    <body >
+        <h1>Escolha uma Operação:</h1>
+        <h3>Favor usar |.| ao invés de |,| </h3>
+        <h3><input type="number" placeholder="Digite um número" id="num1"></h3><!--Entrada de dados-->
+        <h3><input type="number" placeholder="Digite um número" id="num2"></h3>
+        <h3>Operações</h3>
+        <h3>
+            (1) O primeiro número elevado ao segundo<br>
+            (2) Raiz quadrada de cada um dos números<br>
+            (3) Raiz cúbica de cada um dos números
+        </h3>
+        <h3><input type="number" placeholder="Número da opção" id="escolha"></h3>
+        <h3><button type="button" onclick="calcular()">Calcular</button></h3>
+        <h3 id="vazio"></h3><!--Mensagem de saida-->
+        <h3 id="vazio1"></h3>
+        <h3 id="vazio2"></h3>
+    </body>
+</html>

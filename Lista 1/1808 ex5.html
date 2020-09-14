@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html> <!--Lingua na qual iremos trabalhar-->
+<head>
+    <meta charset="UTF-8"> 
+    <title>18 - 08 - Exercicio 5</title>
+    <style>
+        body{background-color: black; /* Edição do fundo da pagina para preto e letras por branco  */
+            color: white;
+        } 
+    </style>
+
+    <script>
+        function desconto(){ //essa é a função que será chamada para efetivar o calculo
+            //aqui sera feito o desconto de 10% informado pelo exercicio exercicio
+            var num1 = document.getElementById("num1").value
+            var desc = num1 - (num1 * 0.1)
+            document.getElementById("desc").innerHTML = `Valor com desconto R$ ${desc.toFixed(2)}`
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>
+        Digite o valor do produto:
+    </h1>
+    <h3>
+        Informe o valor do produto (favor digitar com não digitar com virgula): 
+        <input type="number" id = "num1"> <!--Será adicionado o "value" para a 1ª variavel-->
+    </h3>
+   
+    <h3>
+        <button type = "button" onClick="desconto()"> Desconto 10% </button> <!--Aqui é chamada a função realizada no script-->
+    </h3>
+    <h2 id = "desc"></h2> <!--Aqui é mostrado o valor do calculo efetuado ao decorrer da página -->
+</body>
+</html>

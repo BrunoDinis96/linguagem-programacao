@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html> <!--Lingua na qual iremos trabalhar-->
+<head>
+    <meta charset="UTF-8"> 
+    <title>18 - 08 - Exercicio 9</title>
+    <style>
+        body{background-color: black; /* Edição do fundo da pagina para preto e letras por branco  */
+            color: white;
+        } 
+    </style>
+
+    <script>
+        function trapezio(){ //essa é a função que será chamada para efetivar o calculo
+            //aqui sera feito o calculo informado pelo exercicio 
+            var baseMa = document.getElementById("baseMa").value
+            var baseMe = document.getElementById("baseMe").value
+            var altura = document.getElementById("altura").value
+            var area = ((baseMa + baseMe) * altura) / 2
+            document.getElementById("area").innerHTML = `O valor da area é: ${area.toFixed(2)}`
+        
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>
+        Calculando a area de um de um trapezio <br> <!--Essa tag serve para quebra de linha -->
+    </h1>
+    <h3>
+        Digite o Base Maior (favor digitar com não digitar com virgula):
+        <input type="number" id = "baseMa"> <!--Será adicionado o "value" para a 1ª variavel-->
+    </h3>
+    <h3>
+        Digite o Base Menor (favor digitar com não digitar com virgula):
+        <input type="number" id = "baseMe"> <!--Será adicionado o "value" para a 1ª variavel-->
+    </h3>
+    <h3>
+        Digite o Altura (favor digitar com não digitar com virgula):
+        <input type="number" id = "altura"> <!--Será adicionado o "value" para a 1ª variavel-->
+    </h3>
+    <h3>
+        <button type = "button" onClick="trapezio()"> Calcular </button> <!--Aqui é chamada a função realizada no script-->
+    </h3>
+    <h2 id = "area"></h2> <!--Aqui é mostrado o valor do calculo efetuado ao decorrer da página -->
+</body>
+</html>

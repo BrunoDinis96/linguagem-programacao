@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 2</title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+        <script>
+            function calc() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var num1 = Number(document.getElementById("num1").value)
+                var num2 = Number(document.getElementById("num2").value)
+                var media = (num1 + num2) / 2
+                document.getElementById("media").innerHTML = `Média Final: ${media}`
+                var aprovado
+                //Condição se senão para media se media < 3 | reprovado | media >= 7 | aprovado | media < 7 | necessario realizar o exame
+                if (media < 3) {
+                    document.getElementById("aprovado").innerHTML = `REPROVADO!`
+                }
+                
+                else if (media >= 7) {
+                    document.getElementById("aprovado").innerHTML = `APROVADO!`
+                }
+                else if (media < 7) {
+                    document.getElementById("aprovado").innerHTML = `SERA NECESSARIO REALIZAR O EXAME!`
+                }    
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Boletim Semestral</h1>
+        <h3><input type="number" placeholder="Nota 1° Bimestre" id="num1"></h3><!--Entrada de dados-->
+        <h3><input type="number" placeholder="Nota 2° Bimestre" id="num2"></h3>
+        <h3><button type="button" onclick="calc()">Calcular</button></h3>
+        <h3>
+        <p id="media"></p><!--Mensagem de saida-->
+        <p id="aprovado"></p>
+        </h3>
+    </body>
+</html>

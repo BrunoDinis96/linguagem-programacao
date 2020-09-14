@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html> <!--Lingua na qual iremos trabalhar-->
+<head>
+    <meta charset="UTF-8"> 
+    <title>18 - 08 - Exercicio 10</title>
+    <style>
+        body{background-color: black; /* Edição do fundo da pagina para preto e letras por branco  */
+            color: white;
+        } 
+    </style>
+
+    <script>
+        function quadrado(){ //essa é a função que será chamada para efetivar o calculo
+            //aqui sera feito o calculo informado pelo exercicio 
+            var ladoA = document.getElementById("ladoA").value
+            var area = ladoA * ladoA
+            document.getElementById("area").innerHTML = `O valor da area é: ${area.toFixed(0)}`
+        
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>
+        Calculando a area de um de um quadrado <br> <!--Essa tag serve para quebra de linha -->
+    </h1>
+    <h3>
+        Digite o tamanho do lado Maior (favor digitar com não digitar com virgula):
+        <input type="number" id = "ladoA"> <!--Será adicionado o "value" para a 1ª variavel-->
+    </h3>
+
+    <h3>
+        <button type = "button" onClick="quadrado()"> Calcular </button> <!--Aqui é chamada a função realizada no script-->
+    </h3>
+    <h2 id = "area"></h2> <!--Aqui é mostrado o valor do calculo efetuado ao decorrer da página -->
+</body>
+</html>

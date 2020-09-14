@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 3</title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+    
+        <script>
+            function calc() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var num1 = Number(document.getElementById("num1").value)
+                var num2 = Number(document.getElementById("num2").value)
+                var menor
+                // condição para mostrar o número menor 
+                if (num1 < num2) {//comparação simples e objetiva para mostrar
+                    menor = num1
+                }
+                else {
+                    menor = num2
+                }
+                document.getElementById("menor").innerHTML = `O menor número é o ${menor}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>O programa mostrará qual o menor número</h1>
+        <h3>Favor usar |.| ao invés de |,| </h3>
+        <h3><input type="number" placeholder="Digite um número" id="num1"></h3><!--Entrada de dados-->
+        <h3><input type="number" placeholder="Digite um número" id="num2"></h3>
+        <h3><button type="button" onclick="calc()">Ver</button></h3>
+        <h3 id="menor"></h3> <!--Mensagem de saida-->
+    </body>
+</html>

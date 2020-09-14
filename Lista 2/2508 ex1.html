@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 1</title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+        
+        <script>
+            function Media() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var n1 = Number(document.getElementById("n1").value)
+                var n2 = Number(document.getElementById("n2").value)
+                var n3 = Number(document.getElementById("n3").value)
+                var n4 = Number(document.getElementById("n4").value)
+                var media = (n1 + n2 + n3 + n4) / 4
+                document.getElementById("media").innerHTML = `Média Final: ${media.toFixed(2)}`
+                var aprovado
+                if (media >= 7) {
+                    document.getElementById("aprovado").innerHTML = `APROVADO!`
+                }
+                else {
+                    document.getElementById("aprovado").innerHTML = `NÃO FOI APROVADO!`
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 > Boletim Escolar</h1>
+        <h3> <input type="number" placeholder="Nota 1° Bimestre" id="n1"></h3>
+        <h3> <input type="number" placeholder="Nota 2° Bimestre" id="n2"></h3>
+        <h3> <input type="number" placeholder="Nota 3° Bimestre" id="n3"></h3>
+        <h3> <input type="number" placeholder="Nota 4° Bimestre" id="n4"></h3>
+        <h3> <button type="button" onclick="Media()">Calcular</button></h3>
+        <h3 id="media"></h3>
+        <h3 id="aprovado"></h3>
+    </body>
+</html>

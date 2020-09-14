@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html> <!--Lingua na qual iremos trabalhar-->
+<head>
+    <meta charset="UTF-8"> 
+    <title>18 - 08 - Exercicio 6</title>
+    <style>
+        body{background-color: black; /* Edição do fundo da pagina para preto e letras por branco  */
+            color: white;
+        } 
+    </style>
+
+    <script>
+        function comissao(){ //essa é a função que será chamada para efetivar o calculo
+            //aqui sera feito a comissão de 4% informado pelo exercicio 
+            var num1 = document.getElementById("num1").value
+            var salario = 1045 + (num1 * 0.4)
+            document.getElementById("sal").innerHTML = `Valor de seu salário com a comissão R$ ${salario.toFixed(2)}`
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>
+        Seu salário fixo é R$ 1.045,00 <br> <!--Essa tag serve para quebra de linha -->
+        Digite abaixo o valor total de suas vendas:
+    </h1>
+    <h3>
+        Valor total de suas vendas (favor digitar com não digitar com virgula): 
+        <input type="number" id = "num1"> <!--Será adicionado o "value" para a 1ª variavel-->
+    </h3>
+   
+    <h3>
+        <button type = "button" onClick="comissao()"> Comissão </button> <!--Aqui é chamada a função realizada no script-->
+    </h3>
+    <h2 id = "sal"></h2> <!--Aqui é mostrado o valor do calculo efetuado ao decorrer da página -->
+</body>
+</html>

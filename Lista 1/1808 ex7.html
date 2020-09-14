@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html> <!--Lingua na qual iremos trabalhar-->
+<head>
+    <meta charset="UTF-8"> 
+    <title>18 - 08 - Exercicio 7</title>
+    <style>
+        body{background-color: black; /* Edição do fundo da pagina para preto e letras por branco  */
+            color: white;
+        } 
+    </style>
+
+    <script>
+        function pesagem(){ //essa é a função que será chamada para efetivar o calculo
+            //aqui sera feito o calculo informado pelo exercicio exercicio
+            var num1 = document.getElementById("num1").value
+            var engo = num1 + num1 * 0.15
+            var emagr = num1 - num1 * 0.2
+
+            document.getElementById("engorda").innerHTML = `O seu peso se engordar 15% é: ${engo}` // não sei por que mais não esta aceitando o toFixed
+            document.getElementById("emagre").innerHTML = `O seu peso se emagrecer 20% é: ${emagr.toFixed(2)}`
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>
+        Projeção de pesos <br> <!--Essa tag serve para quebra de linha -->
+        Digite abaixo o seu peso, iremos mostrar ele: <br>
+        - Se engordar 15% sobre o peso digitado<br>
+        - Se emagrecer 20% sobre o peso digitado
+
+    </h1>
+    <h3>
+        Digite o peso (favor digitar com não digitar com virgula): 
+        <input type="number" id = "num1"> <!--Será adicionado o "value" para a 1ª variavel-->
+    </h3>
+   
+    <h3>
+        <button type = "button" onClick="pesagem()"> Calcular </button> <!--Aqui é chamada a função realizada no script-->
+    </h3>
+    <h2 id = "engorda"></h2> <!--Aqui é mostrado o valor do calculo efetuado ao decorrer da página -->
+    <h2 id = "emagre"></h2>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<!--elemento raiz do html-->
+<html>
+    <!--cabeçalho-->
+    <head>
+        <meta charset='utf-8'> <!--idioma pt-br-->
+        <title>Valor nota - ex 23</title>
+        <style>
+            body{background-color: black; /* Edição do fundo da pagina para preto e letras por branco  */
+            color: white;    
+        } 
+        </style>
+        <script>
+            function calcular(){
+                let codigo = Number(document.getElementById("codigo").value)//declaração de letiaveis
+                let quant = Number(document.getElementById("quant").value)
+                let imposto
+                let vi
+                let vt
+                let desconto 
+                let vf
+
+                //calcular
+                if ((codigo >= 1)&&(codigo <=10)){
+                    vi = 10
+                }
+                else if ((codigo >=11)&&(codigo <=20)){
+                    vi = 15
+                }
+                else if ((codigo >= 21)&&(codigo <=30)){
+                    vi = 20
+                }
+                else if ((codigo >=31)&&(codigo <=40)){
+                    vi = 30
+                }
+
+                vt = vi * quant 
+
+                if (vt < 250){
+                    desconto = 0.05
+                }
+                else if ((vt >=250)&&(vt<=500)){
+                    desconto = 0.1
+                }
+                else {
+                    desconto = 0.15
+                }
+                vf = vt - (vt*desconto)
+                //saida de dados após calculo
+                document.getElementById("final").innerHTML = `O valor unitário do produto é ${vi} <br/> A quantidade é ${quant} <br/> O preço total é ${vt} <br/> O valor total na nota é ${vf}`
+            };
+        </script>
+    </head>
+
+    <body>
+        <h1>Valor total na nota</h1>
+        <h3>
+            Informe o código do produto <input type="number" id="codigo">
+        </h3>
+        <h3>
+            Informe a quantidade do produto <input type="number" id="quant">
+        </h3>
+        <h3>
+            <button type="button" onclick="calcular()"> Calcular </button> <!--quando o botão for clicaco chama a função calcular()-->            
+        </h3>
+        <h3 id="final">
+        </h3>
+    </body>
+</html>

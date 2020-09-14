@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 4</title>
+        <style>
+            body{background-color: black; /*Edição do fundo da pagina por petro e letras por branco */
+    
+                color: white;    
+            }     
+        </style>
+        <script>
+            function calcular() {//essa é a função que será chamada para efetivar o calculo
+                //aqui sera feito o calculo do exercicio
+                var num1 = Number(document.getElementById("num1").value)
+                var num2 = Number(document.getElementById("num2").value)
+                var num3 = Number(document.getElementById("num3").value)
+                var maior
+
+                //condição para atribuir valor para uma variavel que receberá o maior numero
+                if ((num1 >= num2) && (num1 >= num3)) {
+                    maior = num1
+                }
+                else if ((num2 >= num1) && (num2 >= num3)) {
+                    maior = num2
+                }
+                else if ((num3 >= num1) && (num3 >= num2)) {
+                    maior = num3
+                }
+                document.getElementById("maior").innerHTML = `O maior número é: ${maior}`
+            }
+        </script>
+    </head>
+    <body>
+        <h1>O programa mostrará qual o maior número</h1>
+        <h3>Favor usar |.| ao invés de |,| </h3>
+        <h3><input type="number" placeholder="Digite um número" id="num1"></h3><!--Entrada de dados-->
+        <h3><input type="number" placeholder="Digite um número" id="num2"></h3>
+        <h3><input type="number" placeholder="Digite um número" id="num3"></h3>
+        <h3><button type="button" onclick="calcular()">Mostrar</button></h3>
+        <h3 id="maior"></h3><!--Mensagem de saida-->
+    </body>
+</html>

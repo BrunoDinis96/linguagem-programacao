@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html> <!--Lingua na qual iremos trabalhar-->
+<head>
+    <meta charset="UTF-8"> 
+    <title>18 - 08 - Exercicio 2</title>
+    <style>
+        body{background-color: black; /* Edição do fundo da pagina para preto e letras por branco  */
+            color: white;    
+        } 
+    </style>
+
+    <script>
+        function multip(){ //essa é a função que será chamada para efetivar o calculo
+            //aqui sera feito a multiplicação informada pelo exercicio exercicio
+            var num1 = document.getElementById("num1").value 
+            var num2 = document.getElementById("num2").value
+            var num3 = document.getElementById("num3").value
+            var mult = num1 * num2 * num3
+            document.getElementById("mult").innerHTML = `O multiplicação dos números é igual a ${mult.toFixed(2)}`
+        }
+    </script>
+</head>
+<body>
+    <h1>
+        Digite 3 números que será realizado a multiplicação dos 3!
+    </h1>
+    <h3>
+        Informe o primeiro número: 
+        <input type="number" id = "num1"> <!--Será adicionado o "value" para a 1ª variavel-->
+    </h3>
+    <h3>
+        Informe o segundo número:
+        <input type="number" id = "num2"> <!--Será adicionado o "value" para a 2ª variavel-->
+    </h3>
+    <h3>
+        Informe o terceiro número:
+        <input type="number" id = "num3"> <!--Será adicionado o "value" para a 3ª variavel-->
+    </h3>
+    <h3>
+        <button type = "button" onClick="multip()"> Multiplicar </button> <!--Aqui é chamada a função realizada no script-->
+    </h3>
+    <h2 id = "mult"></h2> <!--Aqui é mostrado o valor do calculo efetuado ao decorrer da página -->
+</body>
+</html>
